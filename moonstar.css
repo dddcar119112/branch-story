@@ -1,0 +1,146 @@
+@charset "utf-8";
+/*CSS Document*/
+
+.circle_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+}
+  
+  .wrap {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 100%;
+    background: rgb(85, 0, 255);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* moon css & animation */
+  .fa-moon {
+    position: absolute;
+    top: 28%;
+    left: 33%;
+    font-size: 130px;
+    color: rgba(255,255,255,0.8);
+    animation: moon-rotation 4s infinite linear;
+  }
+  
+  .blur {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+  }
+  
+  @keyframes moon-rotation {
+    0%, 100% {
+      transform: rotate(0deg);
+     }
+    50% {
+      transform: rotate(-20deg);
+    }
+  }
+  
+  
+  
+  /* star css & animation */
+  .fa-asterisk {
+    position: absolute;
+    font-size: 13px;
+  }
+  
+  .star1 {
+    top: 70px;
+    left: 90px;
+    animation: star-one 1.2s infinite;
+  }
+        
+  .star2 {
+    top: 50px;
+    right: 110px;
+    animation: star-two 1.7s infinite;
+  }
+        
+  .star3 {
+    top: 180px;
+    left: 45px;
+    animation: star-three 1.5s infinite;
+  }
+        
+  .star4 {
+    top: 120px;
+    right: 40px;
+    font-size: 5px;
+    animation: star-five 1.9s infinite;
+  }
+  
+  .star5 {
+    top: 220px;
+    right: 90px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+  }
+  
+  
+  @keyframes star-one {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+      
+  @keyframes star-two {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+      
+  @keyframes star-three {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+      
+  @keyframes star-four {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes star-five {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }

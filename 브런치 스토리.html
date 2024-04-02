@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/57a4c67da4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hamburger-menu.css">
+    <link rel="stylesheet" href="scroll_wrap.css">
+    <link rel="stylesheet" href="media-screen.css">
+    <link rel="stylesheet" href="moonstar.css">
+
+    <title>브런치스토리</title>
+
+    <style></style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+        /**헤더파트 햄버거메뉴 사이드바**/
+
+        $(function () {
+            $(".hamburger-wrap").click(function () {
+                $(this).toggleClass("active");
+                $(".sidebar").toggleClass("on");
+            });
+            $(".side-ul li a").click(function () {
+                $(".sidebar").removeClass("on");
+                $(".hamburger-wrap").removeClass("active");
+            });
+        });
+
+        /*햄버거메뉴 외부영역 클릭시 닫기*/
+
+        $(document).mouseup(
+            function (e) {
+
+                let sidemenu = $(".sidebar");
+                let hamburger = $(".hamburger-wrap");
+
+                console.log(sidemenu.has(e.target))
+
+                if (sidemenu.has(e.target).length === 0) {
+                    if (hamburger.has(e.target).length === 1) {
+                        return;
+                    }
+                    sidemenu.removeClass("on");
+                    hamburger.removeClass("active");
+                }
+
+            }
+        );
+
+        /**섹션파트2 요일체크 text-color**/
+
+        /*check1=color on*/     /*check2=color off*/
+        $(function () {
+            /*월요일*/
+            $(".btn_click1").click(function () {
+                $(".btn_click1").addClass("check1");/**/$(".btn_click1").removeClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*화요일*/
+            $(".btn_click2").click(function () {
+                $(".btn_click2").addClass("check1");/**/$(".btn_click2").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*수요일*/
+            $(".btn_click3").click(function () {
+                $(".btn_click3").addClass("check1");/**/$(".btn_click3").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*목요일*/
+            $(".btn_click4").click(function () {
+                $(".btn_click4").addClass("check1");/**/$(".btn_click4").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*금요일*/
+            $(".btn_click5").click(function () {
+                $(".btn_click5").addClass("check1");/**/$(".btn_click5").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*토요일*/
+            $(".btn_click6").click(function () {
+                $(".btn_click6").addClass("check1");/**/$(".btn_click6").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click7").removeClass("check1");/**/$(".btn_click7").addClass("check2");/**/
+            });
+            /*일요일*/
+            $(".btn_click7").click(function () {
+                $(".btn_click7").addClass("check1");/**/$(".btn_click7").removeClass("check2");/**/
+                $(".btn_click1").removeClass("check1");/**/$(".btn_click1").addClass("check2");/**/
+                $(".btn_click2").removeClass("check1");/**/$(".btn_click2").addClass("check2");/**/
+                $(".btn_click3").removeClass("check1");/**/$(".btn_click3").addClass("check2");/**/
+                $(".btn_click4").removeClass("check1");/**/$(".btn_click4").addClass("check2");/**/
+                $(".btn_click5").removeClass("check1");/**/$(".btn_click5").addClass("check2");/**/
+                $(".btn_click6").removeClass("check1");/**/$(".btn_click6").addClass("check2");/**/
+            });
+        });
+
+
+        /**섹션파트2 요일체크 내용변화**/
+
+        /*on=on*/     /*off=off*/
+        $(function () {
+            /*월요일*/
+            $(".btn_click1").click(function () {
+                $(".monday").addClass("on");/**/$(".monday").removeClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*화요일*/
+            $(".btn_click2").click(function () {
+                $(".tuesday").addClass("on");/**/$(".tuesday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*수요일*/
+            $(".btn_click3").click(function () {
+                $(".wednesday").addClass("on");/**/$(".wednesday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*목요일*/
+            $(".btn_click4").click(function () {
+                $(".thursday").addClass("on");/**/$(".thursday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*금요일*/
+            $(".btn_click5").click(function () {
+                $(".friday").addClass("on");/**/$(".friday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*토요일*/
+            $(".btn_click6").click(function () {
+                $(".Saturday").addClass("on");/**/$(".Saturday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".sunday").removeClass("on");/**/$(".sunday").addClass("off");/**/
+            });
+            /*일요일*/
+            $(".btn_click7").click(function () {
+                $(".sunday").addClass("on");/**/$(".sunday").removeClass("off");/**/
+                $(".monday").removeClass("on");/**/$(".monday").addClass("off");/**/
+                $(".tuesday").removeClass("on");/**/$(".tuesday").addClass("off");/**/
+                $(".wednesday").removeClass("on");/**/$(".wednesday").addClass("off");/**/
+                $(".thursday").removeClass("on");/**/$(".thursday").addClass("off");/**/
+                $(".friday").removeClass("on");/**/$(".friday").addClass("off");/**/
+                $(".Saturday").removeClass("on");/**/$(".Saturday").addClass("off");/**/
+            });
+        });
+
+
+        /**섹션파트3 버튼클릭 테두리생성**/
+
+        /**/     /**/
+        $(function () {
+            /*라이프 스타일*/
+            $(".click_btn1").click(function () {
+                $(".click_btn1").addClass("check1");/**/$(".click_btn1").removeClass("check2");/**/
+                $(".click_btn2").removeClass("check1");/**/$(".click_btn2").addClass("check2");/**/
+                $(".click_btn3").removeClass("check1");/**/$(".click_btn3").addClass("check2");/**/
+            });
+            /*과학*/
+            $(".click_btn2").click(function () {
+                $(".click_btn2").addClass("check1");/**/$(".click_btn2").removeClass("check2");/**/
+                $(".click_btn1").removeClass("check1");/**/$(".click_btn1").addClass("check2");/**/
+                $(".click_btn3").removeClass("check1");/**/$(".click_btn3").addClass("check2");/**/
+            });
+            /*심리*/
+            $(".click_btn3").click(function () {
+                $(".click_btn3").addClass("check1");/**/$(".click_btn3").removeClass("check2");/**/
+                $(".click_btn1").removeClass("check1");/**/$(".click_btn1").addClass("check2");/**/
+                $(".click_btn2").removeClass("check1");/**/$(".click_btn2").addClass("check2");/**/
+            });
+        });
+
+
+        /**섹션파트3 버튼클릭 내용변화**/
+
+        /**/     /**/
+        $(function () {
+            /*라이프 스타일*/
+            $(".click_btn1").click(function () {
+                $(".lifestyle").addClass("on");/**/$(".lifestyle").removeClass("off");/**/
+                $(".science").removeClass("on");/**/$(".science").addClass("off");/**/
+                $(".trial").removeClass("on");/**/$(".trial").addClass("off");/**/
+            });
+            /*과학*/
+            $(".click_btn2").click(function () {
+                $(".science").addClass("on");/**/$(".science").removeClass("off");/**/
+                $(".lifestyle").removeClass("on");/**/$(".lifestyle").addClass("off");/**/
+                $(".trial").removeClass("on");/**/$(".trial").addClass("off");/**/
+            });
+            /*심리*/
+            $(".click_btn3").click(function () {
+                $(".trial").addClass("on");/**/$(".trial").removeClass("off");/**/
+                $(".lifestyle").removeClass("on");/**/$(".lifestyle").addClass("off");/**/
+                $(".science").removeClass("on");/**/$(".science").addClass("off");/**/
+            });
+        });
+
+
+        /**섹션파트5 가로스크롤 드래그**/
+
+        $(document).ready(function () {
+            let Move = false;
+            let startX = 0;
+            let scrollLeft = 0;
+            let slider = document.querySelector(".scroll_wrap1");
+
+            slider.addEventListener("mousedown", function (e) {
+                Move = true;
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener("mouseleave", function () {
+                Move = false;
+            });
+
+            slider.addEventListener("mouseup", function () {
+                Move = false;
+            });
+
+            slider.addEventListener("mousemove", function (e) {
+                if (Move) {
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = x - startX;
+                    slider.scrollLeft = scrollLeft - walk;
+                }
+            });
+        });
+
+        /****/
+    </script>
+</head>
+
+<body>
+
+    <!-- 헤더 파트 -->
+    <header>
+        <!-- 상단 고정 메뉴 -->
+        <div class="head-menu">
+            <ul class="hu_1">
+                <li>
+                    <div class="hu_1-left">
+                        <!-- 햄버거 메뉴 -->
+                        <div class="hamburger-wrap">
+                            <div class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <a href="#"><span></span>
+                            <h1>brunch story</h1>
+                        </a>
+                    </div>
+                </li>
+
+                <li></li>
+
+                <li>
+                    <div class="hu_1-right">
+                        <div class="head-btn">
+                            <a href="#">
+                                <p>시작하기</p>
+                            </a>
+                        </div>
+
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 햄버거메뉴 클릭 사이드메뉴 -->
+            <div class="sidebar">
+                <ul class="side-ul">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#5500FF" />
+                            <circle cx="24" cy="24" r="20" fill="black" />
+                            <path d="M32.71 19.0401C32.37 19.3801 32.04 19.7101 32.03 20.0401C32 20.3601 32.34 20.6901 32.66 
+                            21.0001C33.14 21.5001 33.61 21.9501 33.59 22.4401C33.57 22.9301 33.06 23.4401 32.55 23.9401L28.42 
+                            28.0801L27 26.6601L31.25 22.4201L30.29 21.4601L28.87 22.8701L25.12 19.1201L28.96 15.2901C29.35 14.9001 
+                            30 14.9001 30.37 15.2901L32.71 17.6301C33.1 18.0001 33.1 18.6501 32.71 19.0401ZM15 29.2501L24.56 19.6801L28.31 
+                            23.4301L18.75 33.0001H15V29.2501Z" fill="white" />
+                        </svg>
+                        <br>
+                        <p>You can make anything <br> by writing <br> <span>C.S.Lewis</span></p>
+                        <a href="#">
+                            <div class="sidebar_btn">브런치스토리 시작하기</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">-브런치스토리 홈-</a><br>
+                        <a href="#">-브런치스토리 나우-</a><br>
+                        <a href="#">-브런치스토리 책방-</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="side-li-container">
+                                <div class="side-left">
+                                    <p>작가-지원</p><br>
+                                    <p>프로젝트 보러가기</p>
+                                </div>
+                                <div class="side-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"
+                                        fill="none">
+                                        <circle cx="24" cy="24" r="24" fill="#5500FF" />
+                                        <circle cx="24" cy="24" r="20" fill="black" />
+                                        <path d="M32.71 19.0401C32.37 19.3801 32.04 19.7101 32.03 20.0401C32 20.3601 32.34 20.6901 32.66 
+                                    21.0001C33.14 21.5001 33.61 21.9501 33.59 22.4401C33.57 22.9301 33.06 23.4401 32.55 23.9401L28.42 
+                                    28.0801L27 26.6601L31.25 22.4201L30.29 21.4601L28.87 22.8701L25.12 19.1201L28.96 15.2901C29.35 14.9001 
+                                    30 14.9001 30.37 15.2901L32.71 17.6301C33.1 18.0001 33.1 18.6501 32.71 19.0401ZM15 29.2501L24.56 19.6801L28.31 
+                                    23.4301L18.75 33.0001H15V29.2501Z" fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">계정을 잊어버리셨나요?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="hu_2-container">
+                <ul class="hu_2">
+                    <li>
+                        <p>작품이 되는 이야기, 브런치 스토리</p> <i class="fa-solid fa-pencil"></i>
+                    </li>
+                    <li>
+                        <p>브런치스토리에 담긴 아름다운 작품을 감상해 보세요.</p>
+                    </li>
+                    <li>
+                        <p>그리고 다시 꺼내 보세요.</p>
+                    </li>
+                    <li>
+                        <p>서랍 속 간직하고 있는 글과 감성을.</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p><span>notice</span>'응원하기' 이용 대상 확대 안내</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="head-banner">
+            <div class="head-banner-container1">
+                <p>BRUNCH</p><br>
+                <p>STORY</p>
+            </div>
+            <div class="head-banner-container2">
+                <ul>
+                    <li><a href="#">브런치 이용안내</a></li>
+                    <li>
+                        <p>이제 브런치 작가라면<br>
+                            누구나 응원 받을 수 있습니다</p>
+                    </li>
+                    <li><a href="#">by브런치스토리팀·FEB 26.2024</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- 섹션 파트 1 -->
+    <section id="s-1">
+        <div class="section-container">
+            <div class="su_1-container">
+                <ul class="su_1">
+                    <li>
+                        <h2>BRUNCH KEYWORD</h2>
+                    </li>
+                    <li>
+                        <p>키워드로 분류된 다양한 글 모음</p>
+                    </li>
+                    <li>
+                        <table class="table1">
+                            <tr>
+                                <td class="td_1"><a href="#" class="section_1_table_a">지구한바퀴 <br> 세계여행</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">그림·웹툰</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">알수록 <br> 좋은 경제</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">IT트렌드</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">사진·촬영</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">취향저격 <br> 영화리뷰</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">오늘은 <br> 이런 책</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">뮤직 인사이드</a></td>
+                            </tr>
+                            <tr>
+                                <td class="td_1"><a href="#" class="section_1_table_a">글쓰기 코치</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">직장인 <br> 현실조언</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">스타트업 <br> 경험담</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">육아 <br> 이야기</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">요리·레시피</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">건강·운동</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">멘탈관리 <br> 심리탐구</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">디자인 <br> 스토리</a></td>
+                            </tr>
+                            <tr>
+                                <td class="td_1"><a href="#" class="section_1_table_a">문화·예술</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">건축·설계</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">인문학·철학</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">쉽게 읽는 <br> 역사</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">우리집 <br> 반려동물</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">멋진 <br> 캘리그래피</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">사랑·이별</a></td>
+                                <td class="td_1"><a href="#" class="section_1_table_a">감성 <br> 에세이</a></td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 섹션 파트 2 -->
+    <section id="">
+        <div class="section-container">
+            <div class="su_2-container">
+                <ul class="su_2">
+                    <li>
+                        <h2>요일별 연재</h2>
+                    </li>
+                    <li>
+                        <p>브런치북 오리지널 연재를 만나 보세요.</p>
+                    </li>
+                    <li>
+                        <ul class="su_2_1">
+                            <li>
+                                <div class="section2_click_btn btn_click1">월</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click2">화</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click3">수</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click4">목</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click5">금</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click6">토</div>
+                            </li>
+                            <li>
+                                <div class="section2_click_btn btn_click7">일</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li>
+                        <!-- 월요일 -->
+                        <ul class="su_2_2 monday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>월요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img monday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 화요일 -->
+                    <li>
+                        <ul class="su_2_2 tuesday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>화요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img tuesday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 수요일 -->
+                    <li>
+                        <ul class="su_2_2 wednesday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>수요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img wednesday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 목요일 -->
+                    <li>
+                        <ul class="su_2_2 thursday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>목요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img thursday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 금요일 -->
+                    <li>
+                        <ul class="su_2_2 friday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>금요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img friday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 토요일 -->
+                    <li>
+                        <ul class="su_2_2 Saturday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>토요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img Saturday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 일요일 -->
+                    <li>
+                        <ul class="su_2_2 sunday">
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img1"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>일요일 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img2"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img3"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img4"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img5"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section2_inbox">
+                                        <div class="section2_in_left_img sunday_img6"></div>
+                                        <div class="section2_in_right">
+                                            <h3>텍스트 예시 입니다.</h3>
+                                            <p>텍스트 예시 입니다.</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#">
+                    <div class="section2_bottom-btn">
+                        <p>연재작품 전체보기</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 섹션 파트 3 -->
+    <section id="section3_background">
+        <div class="section-container">
+            <div class="su_3-container">
+                <ul class="su_3">
+                    <li>
+                        <h2>BRUNCH WRITERS</h2>
+                    </li>
+                    <li>
+                        <p>브런치 추천 작가.</p>
+                    </li>
+                    <li>
+                        <div class="section3_h3_box">
+                            <div class="section3-click_btn click_btn1">
+                                <h3>라이프 스타일</h3>
+                            </div>
+                            <div class="section3-click_btn click_btn2">
+                                <h3>과학</h3>
+                            </div>
+                            <div class="section3-click_btn click_btn3">
+                                <h3>심리</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 라이프 스타일 -->
+                    <li>
+                        <ul class="section3-box lifestyle">
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img1"></div>
+                                        <h2>작가이름</h2>
+                                        <p>라이프 스타일 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img2"></div>
+                                        <h2>작가이름</h2>
+                                        <p>라이프 스타일 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img3"></div>
+                                        <h2>작가이름</h2>
+                                        <p>라이프 스타일 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img4"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img5"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img lifestyle_img6"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 과학 -->
+                    <li>
+                        <ul class="section3-box science">
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img1"></div>
+                                        <h2>작가이름</h2>
+                                        <p>과학 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img2"></div>
+                                        <h2>작가이름</h2>
+                                        <p>과학 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img3"></div>
+                                        <h2>작가이름</h2>
+                                        <p>과학 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img4"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img5"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img science_img6"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 심리 -->
+                    <li>
+                        <ul class="section3-box trial">
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img1"></div>
+                                        <h2>작가이름</h2>
+                                        <p>심리 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img2"></div>
+                                        <h2>작가이름</h2>
+                                        <p>심리 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img3"></div>
+                                        <h2>작가이름</h2>
+                                        <p>심리 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img4"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img5"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="section3_imgbox">
+                                        <div class="section3_img trial_img6"></div>
+                                        <h2>작가이름</h2>
+                                        <p>텍스트 입니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 섹션 파트 4 -->
+    <section id="">
+        <div class="section-container">
+            <div class="section4-container">
+                <!-- 로고 만들기 -->
+                <!-- 
+                <div class="section4_circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 257 272" fill="none">
+                        <ellipse cx="128.269" cy="135.652" rx="128.269" ry="135.652" fill="rgb(85, 0, 255)"/>
+                        <rect x="93.788" y="198.373" width="11.0339" height="46.676" fill="white"/>
+                        <rect x="105.142" y="153" width="11" height="20" transform="rotate(45 105.142 153)" fill="#DBFF00"/>
+                        <rect x="122" y="164" width="11" height="20" fill="#DBFF00"/>
+                        <rect x="141" y="160.778" width="11" height="20" transform="rotate(-45 141 160.778)" fill="#DBFF00"/>
+                        <rect x="110.339" y="198.373" width="11.0339" height="46.676" fill="white"/>
+                        <rect width="11.196" height="46.054" transform="matrix(0.853482 0.521122 -0.479171 0.877722 148.957 198.373)" fill="white"/>
+                        <rect x="121.373" y="37.9243" width="11.0339" height="87.5175" fill="white"/>
+                        <ellipse cx="126.89" cy="134.194" rx="22.0678" ry="23.338" fill="#DBFF00"/>
+                        <path d="M126.89 81.6831L184.223 125.442H69.5559L126.89 81.6831Z" fill="white"/>
+                        </svg>
+                </div> -->
+                <div class="circle_wrap">
+                    <div class="wrap">
+                        <div class="circle">
+                            <!-- moon -->
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-moon blur"></i>
+
+                            <!-- star -->
+                            <div class="star">
+                                <i class="fas fa-asterisk star1"></i>
+                                <i class="fas fa-asterisk star2"></i>
+                                <i class="fas fa-asterisk star3"></i>
+                                <i class="fas fa-asterisk star4"></i>
+                                <i class="fas fa-asterisk star5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 텍스트 -->
+                <div class="section4_h2_container">
+                    <h2>24시간 잠들지 않는</h2>
+                    <h2>브런치 책방이</h2>
+                    <h2>문을 엽니다.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 섹션 파트 5 -->
+    <section id="">
+        <div class="section5_ul_container">
+            <ul class="section5_ul">
+                <li>
+                    <h2>RECOMMANDED ARTICLES</h2>
+                </li>
+                <li>
+                    <p>브런치의 다양한 글을 만나보세요.</p>
+                </li>
+                <li>
+                    <!-- 가로스크롤 -->
+                    <div class="scroll_wrap1">
+                        <div class="scroll_wrap2">
+                            <ul>
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img1">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img2">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img3">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img4">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img5">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img6">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img7">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img8">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img9">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                                <li><a href="javascript:;" draggable="false">
+                                        <div class="box1_wrap">
+                                            <div class="box1 img10">
+                                                <div class="box1_contain">
+                                                    <p>작가이름</p>
+                                                    <h3>텍스트 입니다.</h3>
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                                        quam voluptatem laborum modi placeat at voluptates omnis quis
+                                                        blanditiis in,
+                                                        suscipit, vel ipsam vitae.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <hr>
+                </li>
+                <li>
+                    <p>DRAG & SCROLL</p>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 모바일 환경 적용 테스트 -->
+
+        <!-- <div class="scroll_wrap">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="box1 img1">
+                            <div class="box1_contain">
+                                <p>작가이름</p>
+                                <h3>텍스트 입니다.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Itaque fugiat ducimus perferendis reiciendis non tenetur
+                                    quam voluptatem laborum modi placeat at voluptates omnis quis blanditiis in,
+                                    suscipit, vel ipsam vitae.</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+    </section>
+
+
+
+    <!-- 푸터 파트 -->
+    <footer id="footer_background">
+        <div class="footer-container">
+            <ul class="footer_ul_1">
+                <!-- hr 기준 hr위쪽 -->
+
+                <!-- 세로 첫번째줄 -->
+                <li>
+                    <ul class="footer_in_ul_1">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"
+                                fill="none">
+                                <circle cx="24" cy="24" r="24" fill="#5500FF" />
+                                <circle cx="24" cy="24" r="20" fill="black" />
+                                <path d="M32.71 19.0401C32.37 19.3801 32.04 19.7101 32.03 20.0401C32 20.3601 32.34 20.6901 32.66 
+                            21.0001C33.14 21.5001 33.61 21.9501 33.59 22.4401C33.57 22.9301 33.06 23.4401 32.55 23.9401L28.42 
+                            28.0801L27 26.6601L31.25 22.4201L30.29 21.4601L28.87 22.8701L25.12 19.1201L28.96 15.2901C29.35 14.9001 
+                            30 14.9001 30.37 15.2901L32.71 17.6301C33.1 18.0001 33.1 18.6501 32.71 19.0401ZM15 29.2501L24.56 19.6801L28.31 
+                            23.4301L18.75 33.0001H15V29.2501Z" fill="white" />
+                            </svg></li>
+                        <li>
+                            <p>You can make anything</p>
+                            <p>by writing.</p>
+                        </li>
+                        <li>
+                            <p>C.S.Lewis</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 세로 두번째줄 -->
+                <li>
+                    <ul>
+                        <li><a href="#">브런치 이용안내</a></li>
+                        <li><a href="#">작가신청</a></li>
+                        <li><a href="#">작가 지원 프로젝트</a></li>
+                        <li><a href="#">제휴제안</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </li>
+                <!-- 세로 세번쨰줄 -->
+                <li>
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">이전 이용약관</a></li>
+                        <li><a href="#">카카오 유료서비스 이용약관</a></li>
+                        <li><a href="#">카카오 개인정보 처리방침</a></li>
+                        <li><a href="#">청소년 보호정책</a></li>
+                        <li><a href="#">운영정책</a></li>
+                    </ul>
+                </li>
+                <!-- 세로 네번째줄 -->
+                <li>
+                    <ul>
+                        <li><a href="#">브런치스토리팀 공지사항</a></li>
+                        <li><a href="#">공식 카카오톡 채널</a></li>
+                        <li><a href="#">공식 인스타그램</a></li>
+                        <li><a href="#">공식 페이스북</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <ul class="footer_ul_2">
+                <!-- hr 기준 hr아래쪽 -->
+
+                <!-- 세로 첫번째줄 -->
+                <li>
+                    <p>© Kakao Corp.</p>
+                </li>
+                <!-- 세로 두번째줄 -->
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="none">
+                            <path
+                                d="M43.611 20.083H42V20H24V28H35.303C33.654 32.657 29.223 36 24 36C17.373 36 12 30.627 12 24C12 17.373 17.373 12 24 12C27.059 12 29.842 13.154 31.961 
+                        15.039L37.618 9.382C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24C4 35.045 12.955 44 24 44C35.045 44 44 35.045 44 24C44 22.659 43.862 21.35 43.611 20.083Z"
+                                fill="#FFC107" />
+                            <path d="M6.30603 14.691L12.877 19.51C14.655 15.108 18.961 12 24 12C27.059 12 29.842 13.154 31.961 15.039L37.618 9.382C34.046 6.053 29.268 4 24 4C16.318 
+                        4 9.65603 8.337 6.30603 14.691Z" fill="#FF3D00" />
+                            <path d="M24 44.0002C29.166 44.0002 33.86 42.0232 37.409 38.8082L31.219 33.5702C29.1436 35.1486 26.6075 36.0023 24 36.0002C18.798 36.0002 14.381 32.6832 
+                        12.717 28.0542L6.19501 33.0792C9.50501 39.5562 16.227 44.0002 24 44.0002Z" fill="#4CAF50" />
+                            <path d="M43.611 20.083H42V20H24V28H35.303C34.5142 30.2164 33.0934 32.1532 31.216 33.571L31.219 33.569L37.409 38.807C36.971 39.205 44 34 44 24C44 22.659 
+                        43.862 21.35 43.611 20.083Z" fill="#1976D2" />
+                        </svg>
+                    </a>
+
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="none">
+                            <path
+                                d="M23.9111 11.3176C23.9931 9.08606 24.6201 7.12594 25.7772 5.4874C26.9402 3.84056 28.8628 2.6707 31.4945 2.00781C31.512 2.08885 
+                        31.5302 2.16994 31.5491 2.25072V2.67472C31.5491 3.63616 31.3159 4.73862 30.8556 5.95127C30.3732 7.12541 29.6193 8.23048 28.618 9.22782C27.6815 
+                        10.1066 26.8151 10.6884 26.0494 10.9514C25.7966 11.0269 25.45 11.1012 25.0314 11.1681C24.6591 11.2261 24.2856 11.276 23.9111 11.3176Z"
+                                fill="white" />
+                            <path
+                                d="M24.3502 14.6291C21.3775 14.6291 19.3136 12 16.3813 12C13.4491 12 7.4082 14.6952 7.4082 24C7.4082 33.3048 12.7726 39.3 13.3726 
+                        40C13.9725 40.7001 15.3601 42.4995 17.5098 42.4995C19.6596 42.4995 22.0131 40.7903 24.3502 40.7903C26.6872 40.7903 29.6288 42.4995 31.5492 
+                        42.4995C33.4696 42.4995 34.2595 41.7166 35.5665 40.3663C36.8734 39.016 39.3663 34.8953 40.2369 32.4221C38.8029 31.5685 35.0021 29.2512 35.0021 
+                        24C35.0021 20.4993 36.2814 17.591 38.8401 15.2753C37.1615 13.0918 35.2147 12 32.9996 12C29.6769 12 27.3229 14.6291 24.3502 14.6291Z"
+                                fill="white" stroke="white" stroke-width="4" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

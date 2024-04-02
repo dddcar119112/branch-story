@@ -1,0 +1,656 @@
+@charset "utf-8";
+/*CSS Document*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+   
+html,body {
+    scroll-behavior: smooth;
+    height: auto;
+
+    font-family: 'S-CoreDream-3Light';
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	/*border-collapse: collapse; 이중선 제거*/
+	border-spacing: 0;
+}
+th,td{
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: top;	/* 위 */
+    vertical-align: bottom;   /* 아래 */
+    vertical-align: middle;   /* 가운데 */
+    line-height: 1.5;
+    cursor: pointer;
+}
+th,td:hover {
+    border: 1px solid rgb(85, 0, 255);
+}
+
+.test-border-blue{
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+
+/***기준 섹션 컨테이너***/
+.section-container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+
+
+
+
+/****header part****/
+.head-menu {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #ddd;
+}
+.hu_1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+.hu_1 > li {
+    text-align: center;
+}
+.hu_1 > li:nth-child(2) {
+    width: 60%;
+}
+.hu_1 > li > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+.hu_1-left{
+    display: flex;
+    align-items: center;
+}
+.hu_1-left > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.hu_1-right{
+    display: flex;
+    align-items: center;
+}
+.hu_1-right > a > i {
+    color: black;
+    margin-left: 20px;
+}
+.head-btn {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50px;
+    background: #ddd;
+}
+.head-btn > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding-top: 9px;
+}
+/*헤더 텍스트(5줄)*/
+.hu_2-container {
+    margin-top: 90px;
+}
+.hu_2 {
+    line-height: 1.6;
+    font-weight: 100;
+    font-family: 'BookkMyungjo-Bd';
+}
+.hu_2 > li:nth-child(1) {
+    font-size: 2.5em;
+    display: flex;
+}
+.hu_2 > li:nth-child(2) {
+    font-size: 2em;
+    color: #666;
+}
+.hu_2 > li:nth-child(3) {
+    font-size: 2em;
+    color: #999;
+}
+.hu_2 > li:nth-child(4) {
+    font-size: 2em;
+    color: #ddd;
+}
+.hu_2 > li:nth-child(5) {
+    float: right;
+}
+.hu_2 > li:nth-child(5) > a {
+    display: block;
+    text-decoration: none;
+    color: rgb(85, 0, 255);
+}
+.hu_2 > li:nth-child(5) > a:hover {
+    text-decoration: underline;
+}
+.head-banner {
+    margin-top: 50px;
+    width: 100%;
+    height: 600px;
+    background: rgb(85, 0, 255);
+}
+.head-banner-container1 {
+    padding-top: 50px;
+    text-align: center;
+}
+.head-banner-container1 > p {
+    opacity: 0.1;
+    font-family: 'BookkMyungjo-Bd';
+    line-height: 1;
+    font-size: 15em;
+    color: white;
+}
+.head-banner-container2 {
+    text-align: center;
+    margin-top: -450px;
+}
+.head-banner-container2 > ul > li:nth-child(2) {
+    margin: 125px 0;
+    line-height: 1.2;
+}
+.head-banner-container2 > ul > li > a {
+    display: block;
+    color: blanchedalmond;
+    text-decoration: none;
+}
+.head-banner-container2 > ul > li > p {
+    font-size: 3.5em;
+    font-family: 'BookkMyungjo-Bd';
+    color: blanchedalmond;
+}
+
+
+
+
+
+/****seaction 1 part****/
+.su_1-container {
+    margin-top: 300px;
+}
+.su_1{
+    text-align: center;
+    line-height: 3;
+}
+.su_1 > li > h2 {
+    font-size: 1.5em;
+    font-family: 'BookkMyungjo-Bd';
+}
+.section_1_table_a {
+    color: black;
+    text-decoration: none;
+}
+.table1 {
+    margin-top: 50px;
+}
+.td_1:hover .section_1_table_a {
+    color: rgb(85, 0, 255);
+    text-decoration:underline
+}
+
+
+
+
+
+
+/****seaction 2 part****/
+.su_2-container {
+    margin-top: 300px;
+}
+.su_2-container > a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.su_2{
+    text-align: center;
+    line-height: 3;
+}
+.su_2 > li > h2 {
+    font-size: 1.5em;
+}
+.su_2 > li > hr {
+    border: 1px solid #ddd;
+}
+.su_2_1 {
+    display: flex;
+    justify-content: center;
+}
+.su_2_1 > li {
+    padding: 0 50px;
+}
+.section2_click_btn {
+    color: black;
+    cursor: pointer;
+}
+/*요일버튼 색상효과 스크립트*/
+.section2_click_btn.check1 {
+    color: rgb(85, 0, 255);
+    text-decoration: underline;
+}
+.section2_click_btn.check2 {
+    color: black;
+    
+}
+.section2_click_btn:hover {
+    text-decoration: underline;
+}
+/*script 적용*/
+.su_2_2.monday.on {display: block;display: flex;}
+.su_2_2.monday.off {display: none;}
+.su_2_2.tuesday.on {display: block;display: flex;}
+.su_2_2.tuesday.off {display: none;}
+.su_2_2.wednesday.on {display: block;display: flex;}
+.su_2_2.wednesday.off {display: none;}
+.su_2_2.thursday.on {display: block;display: flex;}
+.su_2_2.thursday.off {display: none;}
+.su_2_2.friday.on {display: block;display: flex;}
+.su_2_2.friday.off {display: none;}
+.su_2_2.Saturday.on {display: block;display: flex;}
+.su_2_2.Saturday.off {display: none;}
+.su_2_2.sunday.on {display: block;display: flex;}
+.su_2_2.sunday.off {display: none;}
+/**/
+.su_2_2.tuesday {
+    display: none;
+}
+.su_2_2.wednesday {
+    display: none;
+}
+.su_2_2.thursday {
+    display: none;
+}
+.su_2_2.friday {
+    display: none;
+}
+.su_2_2.Saturday {
+    display: none;
+}
+.su_2_2.sunday {
+    display: none;
+}
+.su_2_2 {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.su_2_2 > li {
+    width: calc((100% - 40px) / 2);
+}
+.su_2_2 > li > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+.section2_inbox {
+    width: 480px;
+    height: 125px;
+    border: 1px solid lightgray;
+    margin-bottom: 40px;
+    display: flex;
+}
+.section2_in_left_img {
+    width: 125px;
+    height: 125px;
+    background: rgb(85, 0, 255);
+}
+/* 월요일 이미지 */
+.monday_img1 {background: url(Day\ of\ the\ week_img/aaron-burden-9zsHNt5OpqE-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.monday_img2 {background: url(Day\ of\ the\ week_img/alabaster-co-ERDtf2D6xPY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.monday_img3 {background: url(Day\ of\ the\ week_img/alexander-grey-eMP4sYPJ9x0-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.monday_img4 {background: url(Day\ of\ the\ week_img/alif-caesar-rizqi-pratama-loUlSOXL81c-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.monday_img5 {background: url(Day\ of\ the\ week_img/annelies-geneyn-bhBONc07WsI-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.monday_img6 {background: url(Day\ of\ the\ week_img/arif-riyanto-UD9nADGj2mc-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 화요일 이미지 */
+.tuesday_img1 {background: url(Day\ of\ the\ week_img/asal-lotfi-8ePZbdxnpi0-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.tuesday_img2 {background: url(Day\ of\ the\ week_img/asterisk-kwon-q_gjDWf9ths-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.tuesday_img3 {background: url(Day\ of\ the\ week_img/blaz-photo-zMRLZh40kms-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.tuesday_img4 {background: url(Day\ of\ the\ week_img/brando-makes-branding-PjhOkwN0ruY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.tuesday_img5 {background: url(Day\ of\ the\ week_img/daria-nepriakhina-xY55bL5mZAM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.tuesday_img6 {background: url(Day\ of\ the\ week_img/dollar-gill-0V7_N62zZcU-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 수요일 이미지 */
+.wednesday_img1 {background: url(Day\ of\ the\ week_img/elisa-calvet-b-S3nUOqDmUvc-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.wednesday_img2 {background: url(Day\ of\ the\ week_img/erol-ahmed-A-GMtMnQmqM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.wednesday_img3 {background: url(Day\ of\ the\ week_img/fang-wei-lin-H1IRUS1vEFA-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.wednesday_img4 {background: url(Day\ of\ the\ week_img/freestocks-OfaDD5o8hpk-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.wednesday_img5 {background: url(Day\ of\ the\ week_img/guzel-maksutova-B30XL_m3fso-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.wednesday_img6 {background: url(Day\ of\ the\ week_img/janko-ferlic-sfL_QOnmy00-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 목요일 이미지 */
+.thursday_img1 {background: url(Day\ of\ the\ week_img/jaredd-craig-HH4WBGNyltc-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.thursday_img2 {background: url(Day\ of\ the\ week_img/jon-tyson-pFnvc1Cu6zI-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.thursday_img3 {background: url(Day\ of\ the\ week_img/julia-kicova-g827ZOCwt30-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.thursday_img4 {background: url(Day\ of\ the\ week_img/kari-shea-apcUIqOPEIo-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.thursday_img5 {background: url(Day\ of\ the\ week_img/kate-tepl-Wf0nOAXFTDw-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.thursday_img6 {background: url(Day\ of\ the\ week_img/kenny-eliason-HXjtPt_XRAQ-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 금요일 이미지 */
+.friday_img1 {background: url(Day\ of\ the\ week_img/kourosh-qaffari-RrhhzitYizg-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.friday_img2 {background: url(Day\ of\ the\ week_img/marissa-grootes-vdaJJbls3xE-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.friday_img3 {background: url(Day\ of\ the\ week_img/mikolaj-DCzpr09cTXY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.friday_img4 {background: url(Day\ of\ the\ week_img/olesia-buyar-ZD03qVhBJZg-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.friday_img5 {background: url(Day\ of\ the\ week_img/olia-gozha-J4kK8b9Fgj8-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.friday_img6 {background: url(Day\ of\ the\ week_img/rey-seven-_nm_mZ4Cs2I-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 토요일 이미지 */
+.Saturday_img1 {background: url(Day\ of\ the\ week_img/rhema-kallianpur-2W3bDp7K1oQ-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.Saturday_img2 {background: url(Day\ of\ the\ week_img/robert-anasch-McX3XuJRsUM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.Saturday_img3 {background: url(Day\ of\ the\ week_img/sincerely-media-CXYPfveiuis-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.Saturday_img4 {background: url(Day\ of\ the\ week_img/sincerely-media-DgQf1dUKUTM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.Saturday_img5 {background: url(Day\ of\ the\ week_img/sincerely-media-IKzmglo7JLk-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.Saturday_img6 {background: url(Day\ of\ the\ week_img/sincerely-media-nGrfKmtwv24-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 일요일 이미지 */
+.sunday_img1 {background: url(Day\ of\ the\ week_img/sinziana-susa-SNHsMunOPME-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.sunday_img2 {background: url(Day\ of\ the\ week_img/studio-media-9DaOYUYnOls-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.sunday_img3 {background: url(Day\ of\ the\ week_img/susan-q-yin-2JIvboGLeho-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.sunday_img4 {background: url(Day\ of\ the\ week_img/thilak-mohan-C0eMifpRfQE-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.sunday_img5 {background: url(Day\ of\ the\ week_img/thought-catalog-Q7sGp9MStSY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.sunday_img6 {background: url(Day\ of\ the\ week_img/tom-hermans-9BoqXzEeQqM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+
+
+.section2_in_right {
+    margin: 0 auto;
+}
+.section2_bottom-btn {
+    margin: 0 auto;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background: #ddd;
+}
+.section2_bottom-btn > p {
+    display: block;
+    padding-top: 17px;
+}
+.section2_bottom-btn:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/****seaction 3 part****/
+#section3_background {
+    width: 100%;
+    height: auto;
+    background: #f9f9f9;
+}
+.su_3-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 300px;
+}
+.su_3 {
+    text-align: center;
+    line-height: 3;
+}
+.su_3 > li > h2 {
+    font-size: 1.5em;
+    font-family: 'BookkMyungjo-Bd';
+}
+.section3_h3_box {
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+}
+.section3-click_btn {
+    width: 200px;
+}
+/*버튼 클릭시 테두리효과*/
+.section3-click_btn.check1 {
+    border-radius: 50px;
+    background: rgb(85, 0, 255);
+    color: white;
+}
+.section3-click_btn.check2 {
+    background: #f9f9f9;
+}
+/*버튼*/
+.section3-click_btn {
+    margin: 0 auto;
+    cursor: pointer;
+}
+.section3-click_btn:hover {
+    text-decoration: underline;
+}
+/*버튼 내용*/
+.section3-box {
+    width: 100%;
+}
+.section3-box > li {
+    display: flex;
+    justify-content: space-between;
+}
+.section3-box > li > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+/**/
+.section3-box.science {
+    display: none;
+}
+.section3-box.trial {
+    display: none;
+}
+/*script 적용*/
+.section3-box.lifestyle.on{display: block;}
+.section3-box.lifestyle.off{display: none;}
+.section3-box.science.on{display: block;}
+.section3-box.science.off{display: none;}
+.section3-box.trial.on{display: block;}
+.section3-box.trial.off{display: none;}
+
+.section3_imgbox {
+    margin-top: 50px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    padding-top: 50px;
+}
+.section3_img {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgb(85, 0, 255);
+    margin-bottom: 50px;
+}
+/* 라이프 스타일 */
+.lifestyle_img1 {background: url(human_img/kateryna-hliznitsova-kJiBkUO2Www-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.lifestyle_img2 {background: url(human_img/lachlan-dempsey-6VPEOdpFNAs-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.lifestyle_img3 {background: url(human_img/andrey-novik-oHdFt9BwxaQ-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.lifestyle_img4 {background: url(human_img/dix-balino-pq_XPZ4L4WI-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.lifestyle_img5 {background: url(human_img/brock-wegner-StyEcG0ve4E-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.lifestyle_img6 {background: url(human_img/neom-YpUFf0kOWQ0-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 과학 */
+.science_img1 {background: url(human_img/kasper-rasmussen-TZhIkY3Cvfs-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.science_img2 {background: url(human_img/kira-auf-der-heide-_Zd6COnH5E8-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.science_img3 {background: url(human_img/vladimir-fedotov-SVxeVueQKLc-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.science_img4 {background: url(human_img/waldemar-mad-Y0h1FZMAS2g-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.science_img5 {background: url(human_img/max-ilienerwise-YvWJOXHNJ94-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.science_img6 {background: url(human_img/colton-sturgeon-odKeTFsBDgE-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+/* 심리 */
+.trial_img1 {background: url(human_img/sasha-freemind-e_YlUfX0iKY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.trial_img2 {background: url(human_img/bacila-vlad-WTThc6UmwEI-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.trial_img3 {background: url(human_img/jan-antonin-kolar-U9BmwpA--Xg-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.trial_img4 {background: url(human_img/daniel-lincoln-NR705beN_CU-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.trial_img5 {background: url(human_img/andrey-novik-8h-WNb70rDM-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+.trial_img6 {background: url(human_img/mauro-lima-H7rzlXgPhhY-unsplash.jpg)no-repeat;background-position: center;background-size: cover;}
+
+
+
+
+
+
+/****seaction 4 part****/
+.section4-container {
+    padding-top: 300px;
+    padding-bottom: 300px;
+    margin: 0 auto;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+.section4_h2_container > h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+
+
+
+
+
+/****seaction 5 part****/
+.section5_ul > li > h2 {
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'BookkMyungjo-Bd';
+}
+.section5_ul > li > p {
+    text-align: center;
+    margin-top: 50px;
+}
+.section5_ul > li > hr {
+    border: 1px dotted #ddd;
+}
+.section5_ul > li > p {
+    color: #999;
+    font-size: 0.8em;
+}
+
+
+
+
+
+
+/****footer part****/
+#footer_background {
+    margin-top: 200px;
+    width: 100%;
+    height: auto;
+    background: black;
+    font-family: 'BookkMyungjo-Bd';
+}
+.footer-container {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.footer-container > hr {
+    border: 1px solid #333;
+    margin: 30px 0;
+}
+.footer_ul_1 {
+    display: flex;
+    justify-content: space-between;
+}
+.footer_in_ul_1 > li:nth-child(2) {
+    margin: 20px 0;
+}
+.footer_in_ul_1 > li > p {
+    color: white;
+}
+.footer_ul_1 > li > ul > li > a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: 'S-CoreDream-3Light';
+    line-height: 2.5;
+}
+.footer_ul_1 > li > ul > li > a:hover {
+    text-decoration: underline;
+}
+/** hr 기준 **/
+.footer_ul_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_ul_2 > li > p {
+    color: #777;
+    font-size: 0.7em;
+}
