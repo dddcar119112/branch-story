@@ -5,6 +5,9 @@
     margin-top: 50px;
     width: 100%;
     overflow: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .scroll_wrap1 .scroll_wrap2 {
